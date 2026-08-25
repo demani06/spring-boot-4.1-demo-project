@@ -9,3 +9,11 @@ GET http://localhost:8080/products-paging?page=0&size=5&sort=discount,asc
 ##Projection  request
 GET http://localhost:8080/products-paging/projected?page=0&size=5
 ###
+
+##Dynamic Filter  request 1
+GET http://localhost:8080/products/filter?category=Electronics&available=true&minPrice=100&page=0&size=5&sort=price,desc
+###
+
+##Dynamic Filter  request 2 - category and max Price
+GET http://localhost:8080/products/filter?category=Home&available=true&maxPrice=35&page=0&size=5&sort=price,desc
+###

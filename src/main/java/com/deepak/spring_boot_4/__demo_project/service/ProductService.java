@@ -1,6 +1,7 @@
 package com.deepak.spring_boot_4.__demo_project.service;
 
 import com.deepak.spring_boot_4.__demo_project.models.Product;
+import com.deepak.spring_boot_4.__demo_project.models.ProductSummary;
 import com.deepak.spring_boot_4.__demo_project.repository.ProductRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,5 +24,9 @@ public class ProductService {
 
     public Page<Product> getProductsPaged(Pageable pageable) {
         return productRepository.findAll(pageable);
+    }
+
+    public Page<ProductSummary> getProductsPagedMini(Pageable pageable) {
+        return productRepository.findAllProjectedBy(pageable);
     }
 }

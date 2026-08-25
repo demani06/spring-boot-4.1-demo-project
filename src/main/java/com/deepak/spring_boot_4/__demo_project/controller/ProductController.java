@@ -1,6 +1,7 @@
 package com.deepak.spring_boot_4.__demo_project.controller;
 
 import com.deepak.spring_boot_4.__demo_project.models.Product;
+import com.deepak.spring_boot_4.__demo_project.models.ProductSummary;
 import com.deepak.spring_boot_4.__demo_project.service.ProductService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -34,5 +35,11 @@ public class ProductController {
     public Page<Product> getProductsPaging(Pageable pageable) {
         return productService.getProductsPaged(pageable);
 
+    }
+
+    //Projection and paging
+    @GetMapping("/products-paging/projected")
+    public Page<ProductSummary> getProductsMini(Pageable pageable){
+        return productService.getProductsPagedMini(pageable);
     }
 }

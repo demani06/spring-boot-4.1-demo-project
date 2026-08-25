@@ -4,5 +4,8 @@ GET http://localhost:8080/products-paging?page=0&size=5
 
 ##Sorting  request
 GET http://localhost:8080/products-paging?page=0&size=5&sort=discount,asc
+###
 
-
+##Projection  request
+GET http://localhost:8080/products-paging/projected?page=0&size=5
+###
